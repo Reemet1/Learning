@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+		 version="4.0">
+
+	<welcome-file-list>
+		<welcome-file>StudentControllerServlet</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!--
+	<context-paraWsFilterm>
+		<param-name>firstname</param-name>
+		<param-value>Reemet</param-value>
+	</context-paraWsFilterm> -->
+
+	<context-param>
+		<param-name>lastname</param-name>
+		<param-value>Ammer</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>ErrorHandler</servlet-name>
+		<servlet-class>learning.enterprise.servlets.ErrorHandler</servlet-class>
+	</servlet>
+
+	<!-- servlet mappings -->
+	<servlet-mapping>
+		<servlet-name>ErrorHandler</servlet-name>
+		<url-pattern>/ErrorHandler</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/src/main/java/learning/enterprise/servlets/ErrorHandler.java</location>
+	</error-page>
+
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type >
+		<location>/src/main/java/learning/enterprise/servlets/ErrorHandler.java</location>
+	</error-page>
+
+
+</web-app>
+
+
+
